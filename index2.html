@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lihat Produk - Kamira Shop</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    #service {
+      background-color:lightskyblue;
+    }
+    .navbar-brand{
+      background-color:palevioletred;
+      color: white;
+      padding: 10px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .produk {
+       flex: 0 0 33.33%;
+       margin-bottom: 20px;
+    } 
+    .keranjang-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.keranjang-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.keranjang-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+
+ 
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">KAMIRA shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#about-section">Tentang</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Kontak</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="product-section" class="py-5">
+    <div class="container">
+      <h2 class="text-center">Peralatan Kami</h2>
+      <p class="text-center">Di sini Anda dapat menjelajahi berbagai peralatan laboratorium yang kami sediakan:</p>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+  <!-- Daftar produk -->
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="gelas kimia.jpg" alt="Gelas Kimia"  class="product-image">
+        <div class="card-body">
+          <h5 class="card-title">Gelas Kimia</h5>
+          <p class="card-text">Gelas kimia (gelas beker) terbuat dari kaca dengan berbagai ukuran. Fungsi gelas kimia (gelas beker) yaitu sebagai tempat mereaksikan bahan, tempat menampung bahan kimia berupa larutan, padatan, pasta ataupun tepung, tempat melarutkan bahan dan tempat memanaskan bahan.</p>
+          <p class="card-text">ukuran 100 mL</p>
+          <p class="card-text">Harga: Rp 17.000.00,-</p>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#beliModal">Beli</button>
+          <button class="btn btn-success" onclick="addToCart(this)">Keranjang</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="labu ukur.jpg" alt="Labu Ukur" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Labu Ukur</h5>
+          <p class="card-text">Labu takar atau labu volume adalah sebuah alat berbentuk labu yang terbuat dari kaca dan termasuk kedalam peralatan laboratorium yang digunakan untuk mengukur larutan secara spesifik dengan ketelitian pengukuran yang sangat tinggi. Alat ini biasa digunakan untuk mengencerkan larutan.</p>
+          <p class="card-text">ukuran 100 mL</p>
+          <p class="card-text">Harga: Rp 53.000.00,-</p>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#beliModal">Beli</button>
+          <button class="btn btn-success"  onclick="addToCart(this)">Keranjang</button>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="tabungreaksi.jpg" alt="Tabung Reaksi" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Tabung Reaksi</h5>
+          <p class="card-text">Tabung reaksi atau yang dikenal juga sebagai reaction tube/test tube adalah alat bantu untuk mempermudah proses penelitian di dalam laboratorium. Dapat diisi media padat hingga cair,Tabung reaksi berfungsi untuk tempat mereaksikan dua larutan/bahan kimia atau lebih, serta sebagai tempat mengembangbiakan mikroba dalam media cair</p>
+          <p class="card-text">Harga: RP 10.000.00,-</p>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#beliModal">Beli</button>
+          <button class="btn btn-success"  onclick="addToCart(this)">Keranjang</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="krustang.jpg" alt="Tang Krus" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Tang Krus</h5>
+          <p class="card-text" > Tang krus laboratorium adalah alat lab berbahan logam dengan ukuran kecil yang krusial, Fungsi : Untuk memegang krus yang sangat panas. Penjepit tabung reaksi. Untuk memegang tabung tabung reaksi.</p>
+          <p class="card-text">Harga: Rp 36.000.00,-</p>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#beliModal">Beli</button>
+          <button class="btn btn-success"  onclick="addToCart(this)">Keranjang</button>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="buret.jpg".jpg" alt="Buret" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Buret</h5>
+          <p class="card-text">Buret adalah alat laboratorium yang terbuat dari kaca dengan bentuk silinder. Kemudian alat ini memiliki garis ukur dan sumbatan keran pada bagian bawahnya,Fungsi buret untuk mengukur volume suatu cairan atau gas.</p>
+          <p class="card-text">ukuran 50 mL</p>
+          <p class="card-text">Harga: Rp 150.000.00,-</p>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#beliModal">Beli</button>
+          <button class="btn btn-success"  onclick="addToCart(this)">Keranjang</button>
+        </div>
+        </div>
+      </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="desikator.jpg" alt="Desikator" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Desikator</h5>
+          <p class="card-text">Desikator adalah wadah yang terbuat dari bahan gelas yang kedap udara dan mengandung desikan yang berfungsi menghilangkan air dan kristal hasil pemurnian. Desikator, bejana tertutup berisi zat pengering untuk mengeringkan zat-zat lain, yang biasa dipakai ialah asam sulfat pekat, kalsium klorida atau gel silika.</p>
+          <p class="card-text">Harga: Rp 700.000,00- hingga Rp 1.500.000.00,-</p>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#beliModal">Beli</button>
+          <button class="btn btn-success"  onclick="addToCart()">Keranjang</button>
+        </div>
+      </div>
+<!-- Modal Pilih Jumlah Produk -->
+<div class="modal fade" id="beliModal" tabindex="-1" role="dialog" aria-labelledby="beliModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="beliModalLabel">Pilih Jumlah Produk</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="jumlahProduk">Jumlah:</label>
+          <input type="number" class="form-control" id="jumlahProduk" min="1" max="10000">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" onclick="closeModal()">Oke</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+        <div id="productModal" class="modal">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="keranjang-button">
+  <img src="keranjang.png" alt="Keranjang Icon" class="keranjang-icon">
+  <span class="keranjang-count">0</span>
+</button>
+  
+<!-- Script JavaScript -->
+<script>
+  function showModal() {
+    $('#beliModal').modal('show');
+  }
+
+  function closeModal() {
+    $('#beliModal').modal('hide');
+  }
+  function addToCart(button) {
+    var cardBody = button.parentNode;
+    var productName = cardBody.querySelector('.card-title').textContent;
+    var message = document.createElement('p');
+    message.textContent = productName + ' telah dimasukkan ke keranjang.';
+    cardBody.appendChild(message);
+  }
+</script>
+
+ <!-- Menu untuk kembali ke halaman sebelumnya -->
+ <div class="text-right mb-3">
+  <a href="index.html" class="btn btn-primary" target="contrainer">Kembali</a>
+</div>
+<script>
+var keranjangCount = 0;
+
+function addToCart() {
+  keranjangCount++;
+  document.querySelector('.keranjang-count').textContent = keranjangCount;
+}
+</script>
+<script>
+  var keranjangCount = {
+  1: 0, // Jumlah keranjang untuk produk 1
+  2: 0  // Jumlah keranjang untuk produk 2
+};
+
+function addToCart(productId) {
+  keranjangCount[productId]++;
+  document.querySelector('.produk:nth-child(' + productId + ') .keranjang-count').textContent = keranjangCount[productId];
+}
+
+ 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
